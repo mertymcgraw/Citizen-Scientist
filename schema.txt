@@ -39,12 +39,13 @@
 <row name="name" null="1" autoincrement="0">
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
-<row name="dive_certification" null="1" autoincrement="0">
+
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
 <row name="password_hash" null="1" autoincrement="0">
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
+
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -57,6 +58,7 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="users" row="id" />
 </row>
+
 <row name="dive_site" null="1" autoincrement="0">
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
@@ -69,10 +71,7 @@
 <row name="visibility" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="location_id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="locations" row="id" />
-</row>
+
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
@@ -130,11 +129,6 @@
 <part>id</part>
 </key>
 </table>
-<table x="1506" y="197" name="responses">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
-<row name="body" null="1" autoincrement="0">
 <datatype>CHAR</datatype>
 <default>NULL</default></row>
 <row name="survey_question_id" null="1" autoincrement="0">
@@ -146,3 +140,4 @@
 </key>
 </table>
 </sql>
+
