@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :dive_entries
+  has_many :survey_responses
+
+
   validates :name, presence: true
   validates :email, uniqueness: true
   validates :password_hash, uniqueness: true
