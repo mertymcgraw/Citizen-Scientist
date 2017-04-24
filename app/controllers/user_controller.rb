@@ -3,6 +3,8 @@ get '/users/new' do
 end
 
 post '/users' do
+  p "************************"
+  p params
   @user = User.new(params[:user])
   if @user.save
     session[:id] = @user.id
@@ -15,9 +17,9 @@ end
 
 get '/users/:id' do
   if params[:id].to_i == session[:id]
-  erb :'users/show'
+    erb :'users/show'
   else
-  @errors = ["please log in to view your profile page"]
-  erb :'sessions/new'
+    @errors = ["please log in to view your profile page"]
+    erb :'sessions/new'
   end
 end

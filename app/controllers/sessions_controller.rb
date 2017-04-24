@@ -3,10 +3,10 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  @user = User.where(email: params[:user][:email]).first
-  if @user && @user.authenticate?(params[:user][:hashed_password])
+  @user = User.find_by(email: params[:user][:email])
+  if @user && @user.authenticate?(params[:user][:password])
     session[:id] = @user.id
-    redirect "users/#{@user.id}"
+    redirect "/users/#{@user.id}"
   else
     @errors = []
     @errors << "incorrect username or password"

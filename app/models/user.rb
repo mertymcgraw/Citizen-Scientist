@@ -1,4 +1,7 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
+
   has_many :dive_entries
   has_many :survey_responses
 
@@ -17,7 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def authenticate?(plain_text_password)
-    self.hashed_password == plain_text_password
+    self.password == plain_text_password
   end
 
 end
