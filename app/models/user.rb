@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def authenticate?(plain_text_password)
-    self.password == plain_text_password
+    self.hashed_password == plain_text_password
   end
 
 end
