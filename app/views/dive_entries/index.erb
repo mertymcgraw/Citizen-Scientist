@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Log Book</h2>
+    <% dive_number = 1 %>
+    <% @user_dive_entries.each do |entry| %>
+      <a href = "/dive_entries/<%= entry.id %>"> Dive No: <%= dive_number %></a>
+      <br>
+      Dive Site: <%= entry.dive_site %>, <%= entry.location.location_name %>
+      <br>
+      Time: <%= entry.dive_time %> mins
+      <br>
+      Depth: <%= entry.depth %> meters
+      <br>
+      Temp: <%= entry.temperature %>
+      <br>
+      Visibility: <%= entry.visibility %> meters
+      <br>
+      Notes: <%= entry.notes %>
+      <br>
+      <% dive_number += 1 %>
+      <br>
+    <% end %>
+
+    <a href = "/dive_entries/new"> Add Dive </a>
+</div>

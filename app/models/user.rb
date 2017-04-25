@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
 
-  has_many :dive_entries
+  has_many :dive_entries, :foreign_key => "diver_id"
   has_many :survey_responses
 
 
