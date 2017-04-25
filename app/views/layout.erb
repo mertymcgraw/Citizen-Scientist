@@ -7,6 +7,19 @@
   <script src="/js/application.js"></script>
 
   <title>Citizen Scientist</title>
+  <header>
+    <% if session[:id] != nil %>
+      <form method = post action = "/sessions/:id">
+      <input name="_method" type="hidden" value="delete">
+      <input type = "submit" value = "log out">
+    <% else %>
+      <a href="/sessions/new"> Log In </a>
+      <a href="/users/new"> Sign Up </a>
+    <% end %>
+
+  </form>
+</div>
+  </header>
 </head>
 <body>
   <%= yield %>
