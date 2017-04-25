@@ -11,7 +11,7 @@ post '/sessions' do
     @errors = []
     @errors << "incorrect username or password"
    erb :'sessions/new'
- end
+  end
 end
 
 delete '/sessions/:id' do
