@@ -4,23 +4,28 @@
   <h2>Log Book</h2>
     <% dive_number = 1 %>
     <% @user_dive_entries.each do |entry| %>
-      <a href = "/dive_entries/<%= entry.id %>"> Dive No: <%= dive_number %></a>
-      <br>
-      Dive Site: <%= entry.dive_site %>, <%= entry.location.location_name %>
-      <br>
-      Time: <%= entry.dive_time %> mins
-      <br>
-      Depth: <%= entry.depth %> meters
-      <br>
-      Temp: <%= entry.temperature %>
-      <br>
-      Visibility: <%= entry.visibility %> meters
-      <br>
-      Notes: <%= entry.notes %>
-      <br>
-      <% dive_number += 1 %>
-      <br>
-    <% end %>
+      <div class = "dive_details">
+        <div class = "main_dive_details"
+          <a href = "/dive_entries/<%= entry.id %>"> Dive No: <%= dive_number %></a>
+          Dive Site: <%= entry.dive_site %>
+          <%= entry.location.location_name %>
+          Date:
+        </div>
+
+        <div class = "sencondary_dive_details">
+          Time: <%= entry.dive_time %> mins
+          Depth: <%= entry.depth %> meters
+          <br>
+          Temp: <%= entry.temperature %>
+          <br>
+          Visibility: <%= entry.visibility %> meters
+          <br>
+          Notes: <%= entry.notes %>
+        </div>
+      </div>
+        <% dive_number += 1 %>
+        <% end %>
+
 
     <a href = "/dive_entries/new"> Add Dive </a>
 </div>
