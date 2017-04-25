@@ -1,0 +1,11 @@
+<%= erb :'_side_bar' %>
+<div class = "container">
+<h1>Life Time Dive Stats:</h1>
+Number of Dives: <%= @total_number_of_dives %>
+<br>
+Total Time Underwater: <%= @total_time_underwater%> mins
+<br>
+Max Depth: <%= @max_depth %> meters @<%= @max_depth_location.dive_site %>, <%= @max_depth_location.location.location_name %>
+
+
+</div>

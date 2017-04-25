@@ -1,0 +1,22 @@
+<%= erb :'_side_bar' %>
+<div class="container">
+  <h2>Dive No: <%= @user_dive_entries.index(@dive_entry) + 1  %></h2>
+
+      Dive Site: <%= @dive_entry.dive_site %>, <%= @dive_entry.location.location_name %>
+      <br>
+      Time: <%= @dive_entry.dive_time %> mins
+      <br>
+      Depth: <%= @dive_entry.depth %> meters
+      <br>
+      Temp: <%= @dive_entry.temperature %>
+      <br>
+      Visibility: <%= @dive_entry.visibility %> meters
+      <br>
+      Notes: <%= @dive_entry.notes %>
+      <br>
+
+    <form method = "post" action = "/dive_entries/<%=@dive_entry.id%>">
+      <input name="_method" type="hidden" value="delete">
+      <input type = "submit" value = "Delete">
+    </form>
+</div>

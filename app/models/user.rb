@@ -1,5 +1,8 @@
+require 'bcrypt'
+
 class User < ActiveRecord::Base
-  has_many :dive_entries
+
+  has_many :dive_entries, :foreign_key => "diver_id"
   has_many :survey_responses
 
 
@@ -19,5 +22,23 @@ class User < ActiveRecord::Base
   def authenticate?(plain_text_password)
     self.password == plain_text_password
   end
+
+  def total_time_underwater
+    total_time = self.dive_entries.map do |entry|
+      entry.dive_time
+    end
+      total_time.reduce(:+)
+  end
+
+  def max_depth
+    max_depth = 0
+    self.dive_entries.each do |entry|
+      if entry.depth > max_depth
+        max_depth = entry.depth
+      end
+    end
+    max_depth
+  end
+
 
 end

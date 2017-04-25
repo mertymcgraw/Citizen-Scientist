@@ -1,0 +1,30 @@
+<div class="container">
+<h1><center>Add New Dive</h1>
+<form method = "post" action = "/dive_entries" >
+  <input type="hidden" name="dive_details[diver_id]" value = <%= current_user.id %>>
+  <input type="hidden" name="dive_details[location_id]">
+  <label>Dive Site:</label>
+  <input type="text" name="dive_details[dive_site]">
+  <br>Location:</label>
+  <input type="text" name="location">
+  <br>
+  <label>Duration:</label>
+  <input type="text" name="dive_details[dive_time]">
+  <br>
+  <label>Max Depth:</label>
+  <input type="text" name="dive_details[depth]">
+  <br>
+  <label>Temperature:</label>
+  <input type="text" name="dive_details[temperature]">
+  <br>
+  <label>Visibility:</label>
+  <input type="text" name="dive_details[visibility]">
+  <br>
+  <label>Notes:</label>
+  <input type="text" name="dive_details[notes]">
+  <br>
+  <input type = "submit" value = "Add">
+</form>
+</div>
+
+<%= erb :'_errors' %>
