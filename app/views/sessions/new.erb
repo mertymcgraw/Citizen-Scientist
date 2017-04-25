@@ -1,13 +1,13 @@
 <%= erb :'_errors' %>
-<div class="container">
-<h1><center>Log In</h1>
+
+<img src="/public/images/logo.png" id="logo" alt="logo"/>
+<div class = "form">
 <form method = "post" action = "/sessions" >
-  <label>Email:</label>
-  <input type="email" name="user[email]">
+  <input class = "login_fields" placeholder ="email" type="email" name="user[email]">
   <br>
-  <label>Password:</label>
-  <input type="password" name="user[password]">
+  <input class = "login_fields" placeholder ="password" type="password" name="user[password]">
   <br>
-  <input type = "submit" value = "Log In">
+  <input class = "login_button" type = "submit" value = "log in">
 </form>
 </div>
+

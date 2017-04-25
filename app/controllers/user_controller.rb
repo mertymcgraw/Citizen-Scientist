@@ -24,7 +24,6 @@ get '/users/:id' do
 end
 
 get '/users/:user_id/dive_stats' do
-  p "$$$$$$$$$$$$$$$"
   @total_number_of_dives = current_user.dive_entries.count
   @total_time_underwater = current_user.total_time_underwater
   @max_depth = current_user.max_depth

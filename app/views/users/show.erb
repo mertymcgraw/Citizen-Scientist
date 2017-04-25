@@ -1,11 +1,9 @@
+<%= erb :'_side_bar' %>
+
 <div class="container">
   <h1><center><%= current_user.name%>'s Profile Page</h1>
 
 
-  <a href = "/dive_entries"> Log Book </a>
-  <br>
-
-  <a href = "/users/<%= current_user.id %>/dive_stats"> Dive Stats </a>
   <form method = post action = "/sessions/:id">
     <input name="_method" type="hidden" value="delete">
     <input type = "submit" value = "log out">
