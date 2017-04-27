@@ -5,8 +5,6 @@ $(document).ready(function() {
 var displayFullDiveDetials = function(){
     $('.dive_entry_details').mouseover(
     function () {
-      console.log($(this))
-
 
       $(this).find(".secondary_dive_details").fadeIn();
     });

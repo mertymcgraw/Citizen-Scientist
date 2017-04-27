@@ -5,21 +5,8 @@
   <link rel="stylesheet" href="/css/application.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-
   <title>Citizen Scientist</title>
-  <header>
-    <% if session[:id] != nil %>
-      <form method = post action = "/sessions/:id">
-      <input name="_method" type="hidden" value="delete">
-      <input type = "submit" value = "log out">
-    <% else %>
-      <a href="/sessions/new"> Log In </a>
-      <a href="/users/new"> Sign Up </a>
-    <% end %>
-
-  </form>
-</div>
-  </header>
+  <%= erb :'_header' %>
 </head>
 <body>
   <%= yield %>
