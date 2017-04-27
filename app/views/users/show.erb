@@ -1,11 +1,7 @@
 <%= erb :'_side_bar' %>
 
+
 <div class="container">
   <h1><center><%= current_user.name%>'s Profile Page</h1>
 
-
-  <form method = post action = "/sessions/:id">
-    <input name="_method" type="hidden" value="delete">
-    <input type = "submit" value = "log out">
-  </form>
 </div>

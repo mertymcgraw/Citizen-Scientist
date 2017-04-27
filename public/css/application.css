@@ -31,19 +31,28 @@
   padding-right: 10px;
   margin-left: 3px;
 }
+
+#header {
+  padding: 20px;
+  outline: 1px solid blue;
+}
 .container {
   width: 800px;
-  padding: 0px 20px 20px 20px;
-  margin-left: 25%
+  height: 100%;
+  outline: 1px solid red;
+  display: inline-block;
+  margin-left: 20%;
 }
 
 .side_bar{
-width: 25%;
+display: inline-block;
+width: 20%;
 height: 100%;
 position: fixed;
 }
 
 .side_bar a {
+    outline: 1px solid blue;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     border-bottom: 1px solid #4990E2;
@@ -52,8 +61,53 @@ position: fixed;
     transition: 0.3s
 }
 
+/*//////////log book////////////////*/
+.link_to_entry {
+  text-decoration: none;
+}
+.dive_entry_details {
+  outline: 1px solid blue;
+}
+
+.img_thumbnail {
+  display: inline-block;
+  background-color: grey;
+  width: 10%;
+  height: 10%;
+  position: fixed;
+}
+
+.main_dive_details{
+  display: inline-block;
+  margin-left: 18%;
+}
+
+
+.dive_site {
+  color: black;
+  font-weight: bold;
+  font size: 40px;
+}
+
+.location {
+  color: grey;
+  font size: 20px;
+  margin-bottom: 0px
+
+}
+
+.date {
+  margin-top: 0px;
+  color: grey;
+  font size: 20px;
+
+}
+
+
 .secondary_dive_details {
   display: none;
+  margin-left: 18%;
 }
+
 
 
