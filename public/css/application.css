@@ -50,6 +50,9 @@ position: fixed;
     color: #818181;
     display: block;
     transition: 0.3s
+}
 
-
+.secondary_dive_details {
+  display: none;
+}
 
