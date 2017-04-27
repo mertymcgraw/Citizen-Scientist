@@ -2,9 +2,10 @@
 
 <div class="container">
   <h2>Log Book</h2>
+    <div id='allTheDives'></div>
     <% dive_number = 1 %>
     <% @user_dive_entries.each do |entry| %>
-      <div class = "dive_details">
+      <div class = "dive_entry_details">
         <div class = "main_dive_details"
           <a href = "/dive_entries/<%= entry.id %>"> Dive No: <%= dive_number %></a>
           Dive Site: <%= entry.dive_site %>
@@ -12,18 +13,19 @@
           Date:
         </div>
 
-        <div class = "sencondary_dive_details">
-          Time: <%= entry.dive_time %> mins
-          Depth: <%= entry.depth %> meters
-          <br>
-          Temp: <%= entry.temperature %>
-          <br>
-          Visibility: <%= entry.visibility %> meters
-          <br>
-          Notes: <%= entry.notes %>
-        </div>
+          <div class = "secondary_dive_details">
+            Time: <%= entry.dive_time %> mins
+            Depth: <%= entry.depth %> meters
+            <br>
+            Temp: <%= entry.temperature %>
+            <br>
+            Visibility: <%= entry.visibility %> meters
+            <br>
+            Notes: <%= entry.notes %>
+          </div>
       </div>
         <% dive_number += 1 %>
+        <br>
         <% end %>
 
 
