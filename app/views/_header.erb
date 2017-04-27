@@ -1,13 +1,16 @@
-<header id = "header">
-  <% if session != nil %>
-    <form method = post action = "/sessions/:id">
-      <input name="_method" type="hidden" value="delete">
-      <input type = "submit" value = "log out">
-    </form>
-  <% else %>
-    <a href="/sessions/new"> Log In </a>
-    <a href="/users/new"> Sign Up </a>
+<div id = "header">
+  <header>
+    <img id = header_logo src="/images/new_logo.png" id="logo" alt="logo"/>
+    <% if session != nil %>
+      <form method = post action = "/sessions/:id">
+        <input name="_method" type="hidden" value="delete">
+        <input id = "logout" class = "login_button"type = "submit" value = "log out">
+      </form>
+    <% else %>
+      <a href="/sessions/new"> Log In </a>
+      <a href="/users/new"> Sign Up </a>
 
-  <% end  %>
+    <% end  %>
 
-</header>
+  </header>
+</div>
