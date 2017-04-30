@@ -15,6 +15,8 @@ get '/dive_entries/:id' do
 end
 
 post '/dive_entries' do
+  p "***********"
+  p params
   location_id = Location.find_by(location_name:params[:location]).id
   @dive_info = params[:dive_details]
   @dive_info["location_id"] = location_id
@@ -22,7 +24,7 @@ post '/dive_entries' do
   if @new_dive.save
     redirect :"/dive_entries"
   else
-    @errors = @new_password.errors.full_messages
+    @errors = @new_dive.errors.full_messages
     erb :'dive_entries/new'
   end
 end

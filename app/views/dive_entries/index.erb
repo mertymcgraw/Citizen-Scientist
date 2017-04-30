@@ -1,3 +1,4 @@
+<%= erb :'_header' %>
 <%= erb :'_side_bar' %>
 
 <div class="container">
@@ -8,7 +9,7 @@
         <div class = "main_dive_details">
           <p class = "dive_site"> <%= entry.dive_site %> </p>
           <p class = "location"> <%= entry.location.location_name %> </p>
-          <p class = "date"> Date: </p>
+          <p class = "date"> Date: <%= entry.date %></p>
         </div>
 
           <div class = "secondary_dive_details">

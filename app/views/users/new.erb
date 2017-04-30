@@ -1,6 +1,6 @@
 <div class="container">
 <h1><center>Create New Account</h1>
-<form method = "post" action = "/users" >
+<form enctype = "mulipart/form-data" method = "post" action = "/users" >
   <label>Name:</label>
   <input type="text" name="user[name]">
   <br>
@@ -10,7 +10,8 @@
   <label>Password:</label>
   <input type="password" name="user[password]">
   <br>
-  <input type = "submit" value = "Create">
+  <input type="file" name="user[cover_photo]">
+  <input type = "submit" value = "Create" data-disable-with = "Create User">
 </form>
 </div>
 

@@ -1,10 +1,13 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-
+include Paperclip::Glue
   has_many :dive_entries, :foreign_key => "diver_id"
   has_many :survey_responses
 
+  has_attached_file :cover_photo, styles: { medium: "300x300>", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
+
+  validates_attachment_content_type :cover_photo, content_type: /\Aimage\/.*\z/
 
   validates :name, presence: true
   validates :email, uniqueness: true
