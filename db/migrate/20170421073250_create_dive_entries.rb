@@ -4,12 +4,13 @@ class CreateDiveEntries < ActiveRecord::Migration
       t.integer :diver_id, null: false
       t.integer :location_id, null: false
       t.string :dive_site, null: false
+      t.string :date, null: false
       t.integer :dive_time, null: false
       t.integer :depth, null: false
       t.integer :temperature
       t.integer :visibility
       t.string :notes
-      #photos????
+
 
       t.timestamps
     end

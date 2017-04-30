@@ -1,30 +1,28 @@
-<div class="container">
-<h1><center>Add New Dive</h1>
-<form method = "post" action = "/dive_entries" >
-  <input type="hidden" name="dive_details[diver_id]" value = <%= current_user.id %>>
-  <input type="hidden" name="dive_details[location_id]">
-  <label>Dive Site:</label>
-  <input type="text" name="dive_details[dive_site]">
-  <br>Location:</label>
-  <input type="text" name="location">
-  <br>
-  <label>Duration:</label>
-  <input type="text" name="dive_details[dive_time]">
-  <br>
-  <label>Max Depth:</label>
-  <input type="text" name="dive_details[depth]">
-  <br>
-  <label>Temperature:</label>
-  <input type="text" name="dive_details[temperature]">
-  <br>
-  <label>Visibility:</label>
-  <input type="text" name="dive_details[visibility]">
-  <br>
-  <label>Notes:</label>
-  <input type="text" name="dive_details[notes]">
-  <br>
-  <input type = "submit" value = "Add">
-</form>
+<div class = "form_container">
+  <div class = "new_dive_form">
+      <form method = "post" action = "/dive_entries" >
+        <div class = "upload_photo_icon">
+          <img id = "upload_photo_icon" src="/images/camera_icon.png" id="logo" alt="logo">
+          <p class = upload_photo_text>add photos</p>
+        </div>
+        <div class = "first_form_section">
+          <input class = "form_fields" type="hidden" name="dive_details[diver_id]" value = <%= current_user.id %>>
+          <input class = "form_fields" type="hidden" name="dive_details[location_id]">
+          <input class = "form_fields" type="date" name="dive_details[date]">
+          <input class = "form_fields" type="text" name="dive_details[dive_site]" placeholder="dive site">
+          <input class = "form_fields" type="text" name="location" placeholder="location">
+       </div>
+        <div class = "second_form_section">
+          <input class = "form_fields" type="text" name="dive_details[dive_time]" placeholder="mins">
+          <input class = "form_fields" type="text" name="dive_details[depth]" placeholder="depth">
+          <input class = "form_fields" type="text" name="dive_details[temperature]" placeholder="temp">
+          <input class = "form_fields" type="text" name="dive_details[visibility]" placeholder="vis">
+        </div>
+        <div class = "notes_section">
+          <input class="form_fields" type="text" name="dive_details[notes]"  placeholder="notes:">
+        </div>
+          <input class="login_button" type="submit" value="save">
+      </form>
+      <%= erb :'_errors' %>
+  </div>
 </div>
-
-<%= erb :'_errors' %>

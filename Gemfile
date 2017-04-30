@@ -14,6 +14,9 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 gem 'bcrypt'
+gem "paperclip", "~> 5.0.0"
+gem 'carrierwave', '~> 1.0'
+gem 'paperclip-rack', require: 'paperclip/rack'
 
 group :test do
   gem 'shoulda-matchers'

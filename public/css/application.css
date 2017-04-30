@@ -13,7 +13,7 @@
 
 }
 
-.login_fields {
+.form_fields {
   border: none;
   border-bottom: 1px solid #4990E2;
   border-left: 1px solid #4990E2;
@@ -34,25 +34,30 @@
 
 #header {
   padding: 30px;
-  outline: 1px solid blue;
+  width: 100%;
+  height: 20px;
 }
 
 #header_logo {
-  padding-top: 0px;
   float: left;
-  height: 20%;
-  width: 20%;
+  width: 300px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+
 }
 
 #logout {
-  float: right;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 .container {
   width: 800px;
   height: 100%;
-  outline: 1px solid red;
+  border-top: 1px solid #4990E2;
   display: inline-block;
-  margin-left: 20%;
+  margin-left: 21%;
 }
 
 .side_bar{
@@ -62,8 +67,12 @@ height: 100%;
 position: fixed;
 }
 
+.side_bar a:hover {
+  background-color: #4990E2;
+  color: white;
+}
+
 .side_bar a {
-    outline: 1px solid blue;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     border-bottom: 1px solid #4990E2;
@@ -72,19 +81,23 @@ position: fixed;
     transition: 0.3s
 }
 
+.side_bar .profile_link{
+  border-top: 1px solid #4990E2;
+}
+
 /*//////////log book////////////////*/
 .link_to_entry {
   text-decoration: none;
 }
 .dive_entry_details {
-  outline: 1px solid blue;
+  border-bottom: 1px solid #4990E2;
 }
 
 .img_thumbnail {
   display: inline-block;
   background-color: grey;
-  width: 10%;
-  height: 10%;
+  width: 120px;
+  height: 100px;
   position: fixed;
 }
 
@@ -117,7 +130,78 @@ position: fixed;
 
 .secondary_dive_details {
   display: none;
+  color: grey;
   margin-left: 18%;
 }
 
+.secondary_dive_details .p {
+  margin-bottom: 0px
+}
 
+/*///// profile page////*/
+
+.cover_photo{
+  width: 100%;
+  height: 200px;
+  background-color: grey;
+}
+
+/*///// new_dive_form////*/
+.form_container{
+  width: 800px;
+  margin: auto;
+  padding: 10%
+
+}
+.new_dive_form{
+  margin-top: 5%;
+  width: 320px;
+  margin: auto;
+  }
+
+
+#upload_photo_icon{
+  width: 50px;
+  height: 37px;
+  bottom: 0px;
+  padding: 30px;
+  padding-bottom: 3px
+}
+
+.upload_photo_icon{
+  display: inline-block;
+  border:1px solid #4990E2 ;
+}
+
+.upload_photo_icon .upload_photo_text {
+  color: #4990E2;
+  font-size: x-small;
+  text-align: center;
+  margin-top: 0px;
+  padding-bottom: 15px;
+}
+
+.first_form_section {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 10px;
+}
+.first_form_section .form_fields{
+  display: block;
+  vertical-align: top;
+  border-left: none;
+}
+
+.second_form_section .form_fields{
+  border-left: none;
+  width: 56px;
+  text-align: center;
+  font-size: 10pt;
+}
+
+.notes_section .form_fields{
+  border: 1px solid #4990E2 ;
+  width: 300px;
+  height: 100px;
+
+}
