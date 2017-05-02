@@ -1,6 +1,7 @@
 $(document).ready(function() {
   displayFullDiveDetials();
   addDiveLinkListener();
+  exitFrom();
 });
 
 var displayFullDiveDetials = function(){
@@ -18,18 +19,16 @@ var displayFullDiveDetials = function(){
 var addDiveLinkListener = function(){
   $(".add_dive_button").click(function(event){
     event.preventDefault();
-    clickedLink = $(this);
-    console.log(clickedLink)
+    $(".modal").fadeIn();
+  });
+}
 
-    $.ajax({
-      method: "GET",
-      url: clickedLink.attr("href")
-    })
-    .done(function(response){
-      $(".container").append(response);
-      $(".form_container").addClass("modal")
-    })
-  })
+var exitFrom = function(){
+  window.onclick = function(event) {
+    if (event.target == $(".modal")) {
+        $("modal").style.display = "none";
+    }
+  }
 }
 
 
