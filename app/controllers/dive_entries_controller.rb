@@ -4,7 +4,11 @@ get '/dive_entries'do
 end
 
 get '/dive_entries/new' do
-  erb :'dive_entries/new'
+  if request.xhr?
+    erb :'dive_entries/_new_dive_form', layout: false
+  else
+    erb :'dive_entries/new'
+  end
 end
 
 get '/dive_entries/:id' do
@@ -15,8 +19,6 @@ get '/dive_entries/:id' do
 end
 
 post '/dive_entries' do
-  p "***********"
-  p params
   location_id = Location.find_by(location_name:params[:location]).id
   @dive_info = params[:dive_details]
   @dive_info["location_id"] = location_id

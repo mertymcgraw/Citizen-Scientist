@@ -1,5 +1,6 @@
 $(document).ready(function() {
   displayFullDiveDetials();
+  addDiveLinkListener();
 });
 
 var displayFullDiveDetials = function(){
@@ -13,3 +14,22 @@ var displayFullDiveDetials = function(){
       $(this).find(".secondary_dive_details").slideUp();
     });
 }
+
+var addDiveLinkListener = function(){
+  $(".add_dive_button").click(function(event){
+    event.preventDefault();
+    clickedLink = $(this);
+    console.log(clickedLink)
+
+    $.ajax({
+      method: "GET",
+      url: clickedLink.attr("href")
+    })
+    .done(function(response){
+      $(".container").append(response);
+      $(".form_container").addClass("modal")
+    })
+  })
+}
+
+
