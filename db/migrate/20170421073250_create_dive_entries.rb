@@ -10,6 +10,7 @@ class CreateDiveEntries < ActiveRecord::Migration
       t.integer :temperature
       t.integer :visibility
       t.string :notes
+      t.string :photo
 
 
       t.timestamps
