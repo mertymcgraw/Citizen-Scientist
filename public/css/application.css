@@ -60,6 +60,9 @@
   margin-left: 21%;
 }
 
+.errors {
+  color: red;
+}
 .side_bar{
 display: inline-block;
 width: 20%;
@@ -159,6 +162,19 @@ position: fixed;
   margin: auto;
   }
 
+.form_header{
+  height: 60px;
+  background-color: #4990E2;
+  margin-bottom: 5px;
+}
+
+.form_header p{
+  position: absolute;
+  margin-left: 6.5%;
+  margin-top: 15px;
+  color: white;
+  font-size: 20pt;
+}
 
 #upload_photo_icon{
   width: 50px;
@@ -170,7 +186,7 @@ position: fixed;
 
 .upload_photo_icon{
   display: inline-block;
-  border:1px solid #4990E2 ;
+  border:1px solid #4990E2;
 }
 
 .upload_photo_icon .upload_photo_text {

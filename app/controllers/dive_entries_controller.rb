@@ -15,11 +15,16 @@ get '/dive_entries/:id' do
 end
 
 post '/dive_entries' do
-  p "***********"
-  p params
-  location_id = Location.find_by(location_name:params[:location]).id
   @dive_info = params[:dive_details]
-  @dive_info["location_id"] = location_id
+  location = Location.find_by(location_name: params[:location])
+    if location != nil
+      p location.id
+      @dive_info["location_id"] = location.id
+    else
+      @new_location = Location.create(location_name: params[:location])
+      @dive_info["location_id"] = @new_location.id
+    end
+
   @new_dive = DiveEntry.new(@dive_info)
   if @new_dive.save
     redirect :"/dive_entries"
