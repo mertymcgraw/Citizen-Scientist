@@ -12,7 +12,6 @@ class CreateDiveEntries < ActiveRecord::Migration
       t.string :notes
       t.string :photo
 
-
       t.timestamps
     end
   end

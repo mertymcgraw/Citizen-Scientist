@@ -109,6 +109,15 @@ position: fixed;
   width: 125%;
 }
 
+.dive_photo_container{
+  height: 450px;
+  overflow: hidden;
+
+}
+.dive_photo{
+  width: 100%;
+}
+
 .main_dive_details{
   display: inline-block;
   margin-left: 18%;
