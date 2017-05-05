@@ -1,6 +1,7 @@
 $(document).ready(function() {
   displayFullDiveDetials();
   postNewDiveEventListener();
+
 });
 
 var displayFullDiveDetials = function(){
@@ -16,21 +17,28 @@ var displayFullDiveDetials = function(){
 }
 
 var postNewDiveEventListener = function(){
-  $(".new_dive_form").on("submit", function(event){
+  $("#DIVEFORM").on("submit", function(event){
     event.preventDefault();
+
     var newDiveForm = $(this)
-    var formData = $(newDiveFrom).serialize();
+    var formData = $(newDiveForm).serialize();
 
     var request = $.ajax({
-      type: newDiveFrom.attr("method")
-      url: newDiveFrom.attr("action")
+      type: newDiveForm.attr("method"),
+      url: newDiveForm.attr("action"),
       data: formData
     });
 
     request.done(function(response){
       console.log(response)
+      $('body').empty();
+      $('body').append(response);
+
     });
 
+    request.fail(function(response){
+      alert("Something went wrong. Please contact us")
+    });
 
   });
 }

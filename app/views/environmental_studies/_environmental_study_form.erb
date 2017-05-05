@@ -1,0 +1,11 @@
+
+<form class="form_container">
+  <% @environmental_study.survey_questions.each do |thing| %>
+    <label><p> <%= thing.question %> </p></label>
+    <input class = "form_fields" type="text" name="study questions">
+  <% end %>
+  <br>
+  <a href = '/dive_entries'
+    <button class="login_button" type="submit" value = "submit"> Submit </button>
+  </a>
+</form>

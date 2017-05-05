@@ -3,7 +3,7 @@
     <div class="form_header">
       <p>Add New Dive<p>
       </div>
-      <form class = "new_dive_form" method = "post" action = "/dive_entries" >
+      <form id = "DIVEFORM" method = "post" action = "/dive_entries" >
         <div class = "upload_photo_icon">
           <img id = "upload_photo_icon" src="/images/camera_icon.png" id="logo" alt="logo">
           <p class = upload_photo_text>add photos</p>
@@ -26,6 +26,7 @@
         </div>
           <input id="save_new_dive_button" class="login_button" type="submit" value="save">
       </form>
+
       <%= erb :'_errors' %>
   </div>
 </div>

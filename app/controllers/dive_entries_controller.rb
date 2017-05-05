@@ -1,6 +1,6 @@
 get '/dive_entries'do
  @user_dive_entries = current_user.dive_entries
-  erb :'dive_entries/index'
+  erb :'dive_entries/index', layout: !request.xhr?
 end
 
 get '/dive_entries/new' do
@@ -19,7 +19,6 @@ post '/dive_entries' do
   @dive_info = params[:dive_details]
   location = Location.find_by(location_name: params[:location])
     if location != nil
-      p location.id
       @dive_info["location_id"] = location.id
     else
       @new_location = Location.create(location_name: params[:location])
@@ -29,15 +28,23 @@ post '/dive_entries' do
   @new_dive = DiveEntry.new(@dive_info)
   if @new_dive.save
     if request.xhr?
-    ##check if location has an environmental study
-    @environmental_study = @new_dive.location.environmental_studies.first
-    erb :'environmental_studies/_environmental_study_form'
-    else
-    redirect :"/dive_entries"
+      ##check if location has an environmental study
+      @environmental_study = @new_dive.location.environmental_studies.first
+      p "***********"
+      p @environmental_study
+      p @environmental_study.survey_questions
+      p @environmental_study.survey_questions.first.question
+      if @environmental_study != nil
+        erb :'environmental_studies/_environmental_study_form'
+      else
+        p "$$$$$$$$$$$$$$$$$$"
+        erb :"dive_entries/index"
+      end
     end
   else
     @errors = @new_dive.errors.full_messages
     erb :'dive_entries/new'
+
   end
 end
 
