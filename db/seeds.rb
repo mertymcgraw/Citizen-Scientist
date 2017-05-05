@@ -41,7 +41,7 @@ Location.create([
 
 DiveEntry.create([
   {date: "06/27/2016", dive_site: "Shark Island", location_id: 1, dive_time: 38, depth: 18, diver_id: 1, temperature: 30, visibility: 20, photo: "/images/dive2.jpg"},
-  {date: "06/27/2016", dive_site: "Chumphon Pinnacle", location_id: 1, dive_time: 45, depth: 30, diver_id: 1, temperature: 29, visibility: 20, photo: "/images/dive1.jpg" },
+  {date: "06/27/2016", dive_site: "Chumphon Pinnacle", location_id: 1, dive_time: 45, depth: 30, diver_id: 1, temperature: 29, visibility: 20, notes: "whale sharks, and turtles, and sharks! OH MYYYY!", photo: "/images/dive1.jpg" },
   {date: "06/27/2016", dive_site: "Red Rock", location_id: 1, dive_time: 51, depth: 17, diver_id: 1, temperature: 26, visibility: 20, photo: "/images/dive3.jpg"},
   {date: "06/27/2016", dive_site: "Manta Alley", location_id: 2, dive_time: 62, depth: 15, diver_id: 1, temperature: 29, visibility: 10, photo: "/images/dive4.jpg"},
   {date: "06/27/2016", dive_site: "Cauldron", location_id: 2, dive_time: 48, depth: 27, diver_id: 1, temperature: 28, visibility: 22, photo: "/images/dive5.jpg"},

@@ -263,11 +263,11 @@ position: fixed;
   margin-bottom: 2px;
   font-weight: normal;
   font-size: 9pt;
-  color: grey;
+  color: #4A4A4A;;
 }
 .dive_show_second_section{
   padding-top: 15px;
-  color: #4990E2;
+  color:grey;
   border-bottom: 2px solid #4990E2;
 
 }
