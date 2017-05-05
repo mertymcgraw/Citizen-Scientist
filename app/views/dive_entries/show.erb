@@ -5,23 +5,39 @@
     <img class = "dive_photo" src= <%= @dive_entry.photo %>/>
   </div>
 
-<h2>Dive No: <%= @user_dive_entries.index(@dive_entry) + 1  %></h2>
 
-      Dive Site: <%= @dive_entry.dive_site %>, <%= @dive_entry.location.location_name %>
-      <br>
-      Time: <%= @dive_entry.dive_time %> mins
-      <br>
-      Depth: <%= @dive_entry.depth %> meters
-      <br>
-      Temp: <%= @dive_entry.temperature %>
-      <br>
-      Visibility: <%= @dive_entry.visibility %> meters
-      <br>
-      Notes: <%= @dive_entry.notes %>
-      <br>
+  <div class="dive_show_first_section">
+      <h2><%= @dive_entry.dive_site %></h2>
+      <h3><%= @dive_entry.location.location_name %> </h3>
+      <p>Dive No: <%= @user_dive_entries.index(@dive_entry) + 1  %></p>
+  </div>
+
+  <div class="dive_show_second_section">
+    <div class = "depth">
+      <img class ="icon_img" src= "/images/ruler_icon.png"/>
+      <p><%= @dive_entry.depth %> meters </p>
+    </div>
+
+    <div class = "time">
+      <img class ="icon_img" src= "/images/watch-icon.png"/>
+      <p><%= @dive_entry.dive_time %> mins</p>
+    </div>
+
+    <div class = "viz">
+    <img class ="icon_img" src= "/images/mask_icon.png"/>
+     <p><%= @dive_entry.visibility %> meter vis</p>
+    </div>
+  </div>
+
+    <div class = "dive_show_third_section">
+      <p>About the dive:</p>
+      <p> It was  <%= @dive_entry.temperature %> degrees. <%= @dive_entry.notes %></p>
+    </div>
+
 
     <form method = "post" action = "/dive_entries/<%=@dive_entry.id%>">
       <input name="_method" type="hidden" value="delete">
       <input type = "submit" value = "Delete">
     </form>
 </div>
+

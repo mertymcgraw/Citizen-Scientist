@@ -30,10 +30,6 @@ post '/dive_entries' do
     if request.xhr?
       ##check if location has an environmental study
       @environmental_study = @new_dive.location.environmental_studies.first
-      p "***********"
-      p @environmental_study
-      p @environmental_study.survey_questions
-      p @environmental_study.survey_questions.first.question
       if @environmental_study != nil
         erb :'environmental_studies/_environmental_study_form'
       else
