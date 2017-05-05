@@ -3,6 +3,7 @@ Location.destroy_all
 DiveEntry.destroy_all
 EnvironmentalStudy.destroy_all
 EnvironmentalStudyLocation.destroy_all
+SurveyQuestion.destroy_all
 
 
 merty_details = {   :name => "Merty McGraw",
@@ -65,3 +66,9 @@ EnvironmentalStudyLocation.create([
   {location_id: 2, environmental_study_id: 2},
   {location_id: 2, environmental_study_id: 3},
   ])
+
+SurveyQuestion.create([
+  {question: "Did you see a turtle on your dive?", environmental_study_id: 1},
+  {question: "What types of turtles was it: green, hawksbill, not sure?", environmental_study_id: 1},
+  {question: "How many feet long was the turtle you saw?", environmental_study_id: 1},
+])
