@@ -5,7 +5,11 @@
   <% dive_number = 1 %>
   <% @user_dive_entries.each do |entry| %>
     <a class = link_to_entry href = "/dive_entries/<%= entry.id %>"> <div class = "dive_entry_details">
-        <div class = "img_thumbnail" ></div>
+        <div class = "img_thumbnail" >
+          <% if entry.photo != nil %>
+          <img class = "dive_thumbnail" src= <%= entry.photo %>/>
+          <% end %>
+        </div>
         <div class = "main_dive_details">
           <p class = "dive_site"> <%= entry.dive_site %> </p>
           <p class = "location"> <%= entry.location.location_name %> </p>

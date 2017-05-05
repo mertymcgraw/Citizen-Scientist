@@ -98,10 +98,15 @@ position: fixed;
 
 .img_thumbnail {
   display: inline-block;
-  background-color: grey;
+  background-color: gray;
   width: 120px;
   height: 100px;
-  position: fixed;
+  position: absolute;
+  overflow: hidden;
+}
+
+.dive_thumbnail {
+  width: 125%;
 }
 
 .main_dive_details{
