@@ -1,4 +1,6 @@
 # Citizen Scientist
+![image](https://github.com/mertymcgraw/Citizen-Scientist/master/public/images/new_logo.png)
+
 
 For the most part, scientific studies of marine environments are relatively simple and can be carried out by the average person. Yet, highly educated coral scientists and marine biologists use their time to perform simple observational tasks. Citizen Scientist is the “missing link.” 
 
